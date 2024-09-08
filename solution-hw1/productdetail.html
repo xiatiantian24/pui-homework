@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail Page</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <a class="logo-link" href="index.html"
+          ><img src="../assets/logo/logo-01.svg" alt="logo" class="logo-img"
+        /></a>
+        <div class="links">
+          <a href="index.html" class="current">Products</a>
+          <a href="shoppingcart.html">Cart</a>
+        </div>
+      </nav>
+      <div class="product-detail">
+        <h2>Original cinnamon roll</h2>
+        <img
+          src="../assets/products/original-cinnamon-roll.jpg"
+          alt="original cinnamon roll"
+          class="product-image"
+        />
+        <p>Customize our delicious, hand-made cinammon roll to your liking!</p>
+        <div class="glazing">
+          <!-- External Source: Looked up html for drop-down menu element on https://www.w3schools.com/html/html_form_elements.asp -->
+          <label for="glazing">Glazing:</label>
+          <select name="glazing" id="glazing">
+            <option value="keep-origional">Keep original</option>
+            <option value="sugar-milk">Sugar milk</option>
+            <option value="vanilla-milk">Vanilla milk</option>
+            <option value="double-chocolate">Double chocolate</option>
+          </select>
+        </div>
+        <div class="pack-size">
+          <label for="pack-size">Pack size:</label>
+          <select name="pack-size" id="pack-size">
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="12">12</option>
+          </select>
+        </div>
+        <div class="price-add-cart">
+          <p>$ 2.49</p>
+          <button class="add-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+}
+
+.main {
+  width: 1200px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+img {
+  object-fit: contain;
+  display: block;
+}
+
+.logo-img {
+  width: 400px;
+}
+
+.product-gallery img {
+  width: 400px;
+  height: 400px;
+}
+
+.product-detail img {
+  width: 600px;
+  height: 600px;
+}
+
+.cart img {
+  width: 200px;
+  height: 200px;
+}
+
+nav {
+  margin-bottom: 4rem;
+}
+
+nav .links {
+  margin-top: 1rem;
+  border-top: 5px solid black;
+}
+
+.links a {
+  width: fit-content;
+  margin: auto;
+  display: block;
+  margin-top: 0.8rem;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 400;
+}
+
+.links .current {
+  background-color: yellow;
+  font-weight: 700;
+}
+
+.product-detail,
+.product-gallery,
+.cart {
+  width: fit-content;
+  margin: auto;
+}
+
+.product-thumbnail img,
+.cart-thumbnail img,
+.product-detail img {
+  border: 4px solid black;
+}
+
+h2 {
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0 0;
+  text-decoration: underline;
+  text-decoration-color: rgb(205, 205, 205);
+  /* External source: looked up css for underline color at: https://www.w3schools.com/CSSref/css3_pr_text-decoration-color.php */
+}
+
+/* Gallery */
+.product-thumbnail {
+  padding: 0.5rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.product-thumbnail .price {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.product-thumbnail:hover {
+  background-color: yellow;
+}
+
+/* Detail */
+.product-detail p {
+  width: 13rem;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.glazing,
+.pack-size {
+  width: 13rem;
+  margin: auto;
+  margin-bottom: 1.3rem;
+}
+
+select {
+  display: block;
+  height: 1.8rem;
+  border: 3px solid black;
+  width: 100%;
+}
+
+.price-add-cart {
+  font-weight: 700;
+  width: 13rem;
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-add-cart * {
+  display: inline;
+}
+
+.price-add-cart p {
+  width: fit-content;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+.add-cart,
+.checkout {
+  padding: 0.3rem 1.5rem;
+  background-color: yellow;
+  border: 3px solid black;
+  font-weight: 700;
+}
+
+/* Cart */
+.cart-thumbnail {
+  margin-top: 3rem;
+}
+
+.cart-thumbnail p {
+  margin: 0;
+  text-align: center;
+}
+
+.cart-thumbnail .price {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.remove {
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-decoration: underline;
+  text-decoration-color: rgb(205, 205, 205);
+  display: block;
+  margin: auto;
+  padding: 0.6rem 0 1rem;
+}
+
+.total-checkout {
+  width: 800px;
+  margin: auto;
+  margin-top: 2rem;
+  border-top: 5px solid black;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.total {
+  margin-bottom: 0.7rem;
+}
+
+.checkout {
+  margin-top: 0;
+  margin-bottom: 10rem;
+}
