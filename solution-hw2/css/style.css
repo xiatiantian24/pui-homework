@@ -146,10 +146,6 @@ h3 {
   background-color: yellow;
 }
 
-.product-thumbnail:hover h3{
- font-weight: 700;
-}
-
 /* Detail */
 .product-detail{
   width: 90%;
