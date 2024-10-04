@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <div class="nav-left">
+          <a class="logo-link" href="index.html"
+            ><img src="../assets/logo/logo-01.svg" alt="logo" class="logo-img"
+          /></a>
+        </div>
+        <!-- End of nav-left -->
+        <div class="nav-right">
+          <div class="links-container">
+            <div class="links">
+              <a href="index.html">Products</a>
+              <a href="shoppingcart.html" class="current">Cart</a>
+            </div>
+          </div>
+          <hr />
+          <div class="title-container">
+            <h2>Our hand-made cinnamon rolls</h2>
+          </div>
+        </div>
+        <!-- End of nav-right -->
+      </nav>
+      <div class="cart">
+        <div id="cart-item-wrap">
+        <template id="cart-item-template">
+          <div id="cart-item-container">
+            <div id="cart-thumbnail-left">
+              <img src="" alt="cinnamon roll" id="cart-item-image" />
+              <button class="remove" id="btn-remove">Remove</button>
+            </div>
+            <div id="cart-thumbnail-mid">
+              <p id="cart-item-type"></p>
+              <p id="cart-item-glazing"></p>
+              <p id="cart-item-size"></p>
+            </div>
+            <div id="cart-thumbnail-right">
+              <p class="price" id="cart-item-price"></p>
+            </div>
+          </div>
+        </template>
+      </div>
+        <div class="total-checkout">
+          <div class="total-price">
+            <p class="total">Total</p>
+            <p id="cart-total-price"></p>
+          </div>
+          <button class="checkout">Checkout</button>
+        </div>
+      
+    </div>
+    <script src="rollsData.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

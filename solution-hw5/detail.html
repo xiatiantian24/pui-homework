@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Detail Page</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <script defer src="pricecalculator.js"></script>
   </head>
   <body>
     <div class="main">
@@ -25,16 +24,17 @@
           </div>
           <hr />
           <div class="title-container">
-            <h2>Original cinnamon roll</h2>
+            <h2 id="detail-title">Original cinnamon roll</h2>
           </div>
         </div>
         <!-- End of nav-right -->
       </nav>
       <div class="product-detail">
         <img
-          src="../assets/products/original-cinnamon-roll.jpg"
-          alt="original cinnamon roll"
+          src=""
+          alt="cinnamon roll"
           class="product-image"
+          id="detail-image"
         />
         <div class="product-detail-content">
           <p>
@@ -57,11 +57,13 @@
             <div>
               <span>$ </span><div id="price"></div>
             </div>
-            <button class="add-cart">Add to Cart</button>
+            <button class="add-cart" id="btn-add-cart" onclick="addCart()">Add to Cart</button>
           </div>
         </div>
       </div>
     </div>
-    <script></script>
+    <script src="rollsData.js"></script>
+    <script src="detail.js"></script>
+    <script src="pricecalculator.js"></script>
   </body>
 </html>
