@@ -86,25 +86,3 @@ function packSizeChange(element) {
 }
 
 priceElement.innerHTML = basePrice;
-
-
-
-//Handle add to cart
-// let cart = [];
-
-// class Roll {
-//     constructor(rollType, rollGlazing, packSize, basePrice) {
-//         this.type = rollType;
-//         this.glazing =  rollGlazing;
-//         this.size = packSize;
-//         this.basePrice = basePrice;
-//     }
-// }
-
-// const buttonAddCart = document.querySelector("#btn-add-cart");
-
-// function addCart() {
-//     let item = new Roll(rollType, glazingOption, packOption, basePrice)
-//     cart.push(item)
-//     console.log(cart);
-// }
