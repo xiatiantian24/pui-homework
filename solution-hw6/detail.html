@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail Page</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="rollsData.js" defer></script>
+    <script src="detail.js" defer></script>
+    <script src="pricecalculator.js" defer></script>
+    <script src="cart.js" defer></script>
+    <script src="localStorage.js" defer></script>
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <div class="nav-left">
+          <a class="logo-link" href="index.html"
+            ><img src="../assets/logo/logo-01.svg" alt="logo" class="logo-img"
+          /></a>
+        </div>
+        <!-- End of nav-left -->
+        <div class="nav-right">
+          <div class="links-container">
+            <div class="links">
+              <a href="index.html" class="current">Products</a>
+              <a href="shoppingcart.html">Cart</a>
+            </div>
+          </div>
+          <hr />
+          <div class="title-container">
+            <h2 id="detail-title">Original cinnamon roll</h2>
+          </div>
+        </div>
+        <!-- End of nav-right -->
+      </nav>
+      <div class="product-detail">
+        <img
+          src=""
+          alt="cinnamon roll"
+          class="product-image"
+          id="detail-image"
+        />
+        <div class="product-detail-content">
+          <p>
+            Customize our delicious, hand-made cinammon roll to your liking!
+          </p>
+          <div class="selections">
+            <div class="glazing">
+              <!-- External Source: Looked up html for drop-down menu element on https://www.w3schools.com/html/html_form_elements.asp -->
+              <label for="glazing">Glazing:</label>
+              <select name="glazing" id="glazing"  onchange="glazingChange(this)">
+              </select>
+            </div>
+            <div class="pack-size">
+              <label for="pack-size">Pack size:</label>
+              <select name="pack-size" id="pack-size" onchange="packSizeChange(this)">
+              </select>
+            </div>
+          </div>
+          <div class="price-add-cart">
+            <div>
+              <span>$ </span><div id="price"></div>
+            </div>
+            <button class="add-cart" id="btn-add-cart" onclick="addCart()">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
