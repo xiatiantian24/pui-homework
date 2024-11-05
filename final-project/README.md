@@ -1,3 +1,99 @@
+# **FP2 \- Evaluation of the Final project**
+
+## Project Description
+
+I am comparing two ideas. The first idea is the Text Dungeon, a web page with animated text that is not really meant to be read but to play around with.
+
+The second idea is a personal portfolio as a showcase of my past projects.
+
+## High-Fi Prototypes
+
+### *Prototype 1*
+
+![prototype1](images/prototype1-1.jpg)
+![prototype1](images/prototype1-2.jpg)
+
+Participants thought the text dungeon idea was creative but were confused about its functionality at first. They thought the scrolling action was intuitive, so were using the keyboard to navigate. 
+
+### *Prototype 2*
+
+![prototype2](images/prototype2-1.jpg)
+![prototype2](images/prototype2-2.jpg)
+
+Participants appreciated the clearness of the purpose of the website, although it was difficult for them to navigate around and read all the text.They thought it was cool how the image follows the mouse, but wish their sizes could change.
+
+## Usability Test
+
+In terms of understanding the functionality,
+participants had a clearer understanding of the personal portfolio than the text dungeon after exploring both prototypes. This is mainly due to their previous exposures to similar portfolio websites, whereas they had rarely interacted with animated text before.
+
+In terms of navigating the page, the scrolling action from the text dungeon idea felt more intuitive to the participants than the hovering action from the portfolio, as the latter require opening the accordion and moving the mouse around to read the text. Accidentally moving the cursor outside of the accordion will cause it to close, which brought frustration to one participant. They wish the images can get smaller in order for them to read the text easier.
+
+In terms of turning animations or music off, while not functional in the prototype, participants correctly imagined where and how they would approach the task. They also appreciated this function when they wish to read the full story, as animation and sound can be distracting.
+
+Based on the user feedback, it seemed like the the personal portfolio idea has greater potential as it is more functional and matches the usability guidelines. The text dungeon idea has cool animations but is less functional.
+
+
+## Updated Designs
+
+![updated designs](images/prototype3-2.jpg)
+![updated designs](images/prototype3-1.jpg)
+
+Instead of using accdions to contain information about the project, I changed them to a static button that displays key information at all time. The image will still follow the mouse when hovering over the button. Clicking the button will navigate to the detail page of the project.
+
+
+## Feedback Summary
+
+The lab session was helpful for me to determine which idea is more technically feasible. It seems that doing animation with GSAP require a lot of learning beforehand and the final output may not be as desireable as the design is. I am still willing to incorporate GSAP to my personal website to get more practice with it, such as using the library to enable more smooth transition or page navigation. However, the discussion helped me decide that the main focus of my idea should not be the animation happening by itself but more about how  interact with the website to trigger it.
+
+## Milestones
+
+Weekly milestones until the end of the semester. 
+
+### *Implementation Plan*
+
+- [X] Week 9 Oct 28 \- Nov 1:
+  - [X] FP1 due
+  
+- [X] Week 10 Nov 4 \- Nov 8:   
+  - [X] FP2 due
+- [ ] Week 11 Nov 11 \- Nov 15: 
+  - [ ] Image hovering function implementation
+  - [ ] Button function implementation
+- [ ] Week 12 Nov 18 \- Nov 22:  
+  - [ ] Adding actual content to the button (text, images)
+  - [ ] Detail page layout implementation 
+- [ ] Week 13 Nov 25 \- Nov 29:  
+  - [ ] Responsive design 
+  - [ ] Thanksgiving  
+- [ ] Week 14 Dec 2 \- Dec 6:  
+  - [ ] FP4 due 
+
+### *Libraries and Other Components*
+
+Including but not limited to:
+
+Astro (https://astro.build/)
+
+Tailwind CSS (https://tailwindcss.com/)
+
+## Generative AI Use Plan
+
+Outline how you plan to use Generative AI tools to aid in the implementation (\~300 words).
+
+### *Tool Use*
+
+* ChatGPT  
+  * I will use it for checking syntax and explaining why a specific bug happens because it can help me identify problems faster and earlier in the stage.
+  * I will not use it for writing functions for me because it won't help me practice what I've learned in the class. 
+  * I will also not let it decide the properties to apply to the page (such as color, alt text, content hierarchy) because it might not help me practice implementing usability heuristics.
+
+### *Responsible Use*
+I will add comment on the lines of code that are written or informed by ChatGPT, and I will give creadit to other external sources I use. In addition, I will go through any generated code and modify it if needed make sure it aligns with usability guidelines. 
+
+
+---
+
 # **FP1 \- Proposal for Critique**
 
 ## Idea Sketches
