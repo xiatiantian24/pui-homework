@@ -1,0 +1,21 @@
+---
+import GalleryLayout from "../layouts/GalleryLayout.astro";
+import ProjectContainer from "../components/ProjectContainer.astro";
+
+const pageTitle = "Home";
+---
+
+<GalleryLayout pageTitle={pageTitle}>
+  <main>
+    <ProjectContainer />
+  </main>
+</GalleryLayout>
+
+<style>
+  #hero-content {
+    font-family: "LT Cushion";
+    font-weight: 375;
+    font-size: 1.4rem;
+    padding-left: 1.6rem;
+  }
+</style>
