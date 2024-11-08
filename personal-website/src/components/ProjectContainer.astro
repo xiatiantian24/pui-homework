@@ -1,0 +1,158 @@
+---
+import ProjectButton from "../components/ProjectButton.astro";
+---
+
+<div class="w-full mt-16 mb-32 md:mt-12 mb-16 px-6" id="hero">
+  <div>
+    <div>
+      Ray designs <a href="#uxui">user experiences</a> and likes to do fun (and serious)
+      things with <a>motions</a> and <a>JavaScript</a>.
+    </div>
+    <div class="mt-2" id="prev-exp">
+      Previous experience in health-tech and AI Chatbot for businesses.
+    </div>
+  </div>
+</div>
+<div
+  class="category flex flex-col md:flex-row w-full px-6 relative gap-0 md:gap-0"
+>
+  <div class="category-label">
+    <div class="sticky top-24 pt-10">
+      <a href="#uxui"><div>UX&UI</div></a>
+    </div>
+  </div>
+  <div class="project-wrap" id="uxui">
+    <ProjectButton
+      title="streamliming shift scheduling for nurses"
+      description="BJC HealthCare"
+      scopes={["Internship", "2023-2024", "UX & UI Design"]}
+      href="/projects/bjc-shift-scheduling"
+      imgPath="../assets/images/bjc-cover-flex.jpg"
+      altText="Thumbnail of the Flexible Scheduling project"
+    />
+    <ProjectButton
+      title="what nurses need to work virtually"
+      description="BJC HealthCare"
+      scopes={["Internship", "2023-2024", "UX Research"]}
+      href="/projects/bjc-virtual-nursing"
+      imgPath="../assets/images/bjc-cover-main.jpg"
+      altText="Thumbnail of the Virtual Nursing project"
+    />
+    <ProjectButton
+      title="personalizing virtual assistant demos"
+      description="Rulai, Inc."
+      scopes={["Internship", "2022", "UX Design", "Solution Design"]}
+      href="/projects/rulai"
+      imgPath="../assets/images/rulai-cover.jpg"
+      altText="Thumbnail of the Rulai project"
+    />
+  </div>
+</div>
+<div class="category flex flex-col md:flex-row w-full px-6 relative">
+  <div class="category-label">
+    <div class="sticky pt-8 top-16">
+      <a href="#web"><div>Web</div></a>
+    </div>
+  </div>
+  <div class="project-wrap" id="web">
+    <ProjectButton
+      title="Priya"
+      description="Flexible Scheduling App & Virtual Nursing"
+      scopes={["UX/UI Design", "User Research", "Brand Design"]}
+      href="/projects/bjc-copy"
+      imgPath="../assets/images/bjc-cover-main.jpg"
+      altText="A headshot of Priya against a brick wall background."
+    />
+  </div>
+</div>
+<div class="category flex flex-col md:flex-row w-full px-6 relative">
+  <div class="category-label">
+    <div class="sticky pt-8 top-16">
+      <a href="#ixd"> <div>Inter<br />action</div></a>
+    </div>
+  </div>
+  <div class="project-wrap" id="ixd">
+    <ProjectButton
+      title="Priya"
+      description="Flexible Scheduling App & Virtual Nursing"
+      scopes={["UX/UI Design", "User Research", "Brand Design"]}
+      href=""
+      imgPath="../assets/images/bjc-cover-main.jpg"
+      altText="A headshot of Priya against a brick wall background."
+    />
+  </div>
+</div>
+
+<style>
+  .project-wrap {
+    width: 100%;
+  }
+
+  .category {
+    height: max-content;
+  }
+
+  .category-label {
+    font-family: "TT Fors";
+    font-size: 1.2rem;
+    transition: all 250ms ease-in-out;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -0.025em;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+  }
+
+  #hero {
+    font-family: "LT Cushion";
+    font-weight: 375;
+    font-size: 1rem;
+    transition: all 250ms ease-in-out;
+  }
+
+  #prev-exp {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .category-label {
+      border-bottom: 1.5px solid var(--color-border-secondary);
+      width: 8rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    #hero {
+      border-bottom: none;
+    }
+
+    #hero {
+      padding: 2rem 0 2rem 11.5rem;
+      font-size: 1.15rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .category-label {
+      font-size: 2rem;
+      width: 10rem;
+    }
+
+    #hero {
+      font-size: 1.4rem;
+      padding-left: 16.5rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .category-label {
+      font-size: 2.5rem;
+      width: 15rem;
+    }
+
+    #hero {
+      padding-left: 20.75rem;
+    }
+  }
+</style>
