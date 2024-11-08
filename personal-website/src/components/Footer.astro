@@ -1,0 +1,60 @@
+---
+const socialLinks = [
+  {
+    text: "LinkedIn",
+    href: "https://linkedin.com/",
+  },
+  {
+    text: "GitHub",
+    href: "https://github.com/",
+  },
+  {
+    text: "Resume",
+    href: "https://twitter.com/",
+  },
+];
+---
+
+<!-- Base code referenced from Dante Astro Template by Asta Bankauske, 
+     Front-End Developer, Co-Founder @JustGoodThemes & @JustGoodUI.
+     https://github.com/JustGoodUI/dante-astro-theme/blob/main/src/components/Footer.astro  
+-->
+<footer class="w-full mx-auto pt-8 pb-10">
+  <div
+    class:list={[
+      " flex flex-col gap-4",
+      {
+        "sm:flex-row-reverse sm:justify-between sm:items-center":
+          socialLinks.length > 0,
+      },
+    ]}
+  >
+    {
+      socialLinks.length > 0 && (
+        <div class="flex gap-4 md:gap-8 text-sm">
+          {socialLinks.map((link) => (
+            <a
+              class="inline-flex items-center justify-center text-sm hover:"
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferer"
+            >
+              {link.text}
+            </a>
+          ))}
+        </div>
+      )
+    }
+    <div class="text-sm">.Some Text Here.</div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    font-family: "TT Fors";
+    padding: 0.8rem 1rem 1rem;
+  }
+  a {
+    text-transform: uppercase;
+  }
+</style>

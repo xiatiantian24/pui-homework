@@ -1,0 +1,47 @@
+---
+const { bg } = Astro.props;
+import Logo from "../components/Logo.astro";
+---
+
+<nav class:list={["sticky top-0", bg || "bg-white"]}>
+ <Logo />
+  <div id="my-name" class="hidden md:flex">Ray Xia</div>
+  <ul class="menu flex gap-4 md:gap-8 text-sm">
+    <li class=""><a href="/" class="p-2 hover:">Projects</a></li>
+    <li class=""><a href="/about/" class="p-2 hover:">About</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    font-family: "TT Fors";
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.1rem 1rem 0.2rem;
+  }
+
+  .bg-white {
+    background-color: #fff;
+  }
+
+  ul {
+    justify-content: flex-end;
+    list-style: none;
+  }
+
+  li {
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  #my-name {
+    text-transform: uppercase;
+    font-weight: 400;
+    position: absolute;
+    left: calc(50% - 30px);
+    color: var(--color-text-secondary);
+  }
+</style>
