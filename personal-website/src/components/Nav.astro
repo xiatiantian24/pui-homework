@@ -4,18 +4,26 @@ import Logo from "../components/Logo.astro";
 ---
 
 <nav class:list={["sticky top-0", bg || "bg-white"]}>
- <Logo />
+  <Logo />
   <div id="my-name" class="hidden md:flex">Ray Xia</div>
   <ul class="menu flex gap-4 md:gap-8 text-sm">
-    <li class=""><a href="/" class="p-2 hover:">Projects</a></li>
-    <li class=""><a href="/about/" class="p-2 hover:">About</a></li>
+    <li class="">
+      <a href="/" class="p-1 nav-link">
+        <span>Projects</span>
+        <span class="slider"></span></a>
+    </li>
+    <li class="">
+      <a href="/about/" class="p-1 nav-link">
+        <span>About</span>
+        <span class="slider"></span></a>
+    </li>
   </ul>
 </nav>
 
 <style>
   nav {
     font-family: "TT Fors";
-    z-index: 9999;
+    z-index: 99;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,8 +48,55 @@ import Logo from "../components/Logo.astro";
   #my-name {
     text-transform: uppercase;
     font-weight: 400;
+    font-size: 0.8rem;
+    letter-spacing: 0.4rem;
     position: absolute;
-    left: calc(50% - 30px);
+    left: calc(50% - 45px);
     color: var(--color-text-secondary);
+  }
+
+  .nav-link {
+    transition: all 0.2s ease-in-out;
+    border-bottom: solid transparent 1.5px;
+    position: relative;
+    color: var(--color-text-secondary);
+  }
+
+  .nav-link:before {
+    content: "";
+    width: 0;
+    height: 1.5px;
+    background: var(--color-border-secondary);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: var(--color-text-main);
+  }
+
+  .nav-link:hover:before,
+  .active:before {
+    width: 100%;
+  }
+
+  .slider {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 90%;
+    margin: 0 auto;
+    height: 1.5px;
+    /* background-color: var(--color-border-secondary); */
+    width: 0%;
+    transition: width 0.2s ease;
+  }
+
+  @media (hover: none) {
+    #li-about {
+      display: block;
+    }
   }
 </style>

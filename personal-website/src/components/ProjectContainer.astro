@@ -2,16 +2,83 @@
 import ProjectButton from "../components/ProjectButton.astro";
 ---
 
-<div class="w-full mt-16 mb-32 md:mt-12 mb-16 px-6" id="hero">
-  <div>
-    <div>
+<!-- Hero -->
+<div class="w-full mt-16 md:mt-12 mb-24 md:mb-20 pl-4" id="hero">
+  <div class="grid md:grid-cols-2 relative gap-2">
+    <!-- Hero Text -->
+    <div class="md:col-span-1 intro flex flex-col pr-4 md:pr-0">
+      <div id="headline">
+        Ray designs user experiences and likes to do fun (and serious) things
+        with motion using JavaScript.
+      </div>
+      <div class="mt-4" id="prev-exp">
+        Previous experience in designing digital innovations in healthcare and
+        AI chatbot for businesses.
+      </div>
+      <div id="current">
+        Currently <br />@ <a
+          href="https://hcii.cmu.edu/"
+          target="_blank"
+          rel="noopener noreferrer">CMU HCII</a
+        >
+      </div>
+      <a id="project-nav" href="#projects" class="flex content-center" aria-label="My Projects"> </a>
+      <div class="img-wrap hidden left-1/3 top-1/3" id="project-btn">
+        <svg
+          width="296"
+          height="79"
+          viewBox="0 0 296 79"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M109.4 37C111.373 37 113.093 37.3733 114.56 38.12C116.027 38.84 117.16 39.8533 117.96 41.16C118.76 42.44 119.16 43.8933 119.16 45.52C119.16 47.1467 118.76 48.6133 117.96 49.92C117.16 51.2 116.027 52.2133 114.56 52.96C113.093 53.68 111.373 54.04 109.4 54.04H105V65H100.6V37H109.4ZM109.36 49.92C111.013 49.92 112.307 49.52 113.24 48.72C114.173 47.8933 114.64 46.8267 114.64 45.52C114.64 44.2133 114.173 43.1467 113.24 42.32C112.307 41.4933 111.013 41.08 109.36 41.08H105V49.92H109.36ZM140.358 65L131.318 54.04H128.438V65H124.038V37H132.838C134.811 37 136.531 37.3733 137.998 38.12C139.464 38.84 140.598 39.8533 141.398 41.16C142.198 42.44 142.598 43.8933 142.598 45.52C142.598 47.4667 142.038 49.16 140.918 50.6C139.824 52.0133 138.304 53 136.358 53.56L145.838 65H140.358ZM128.438 41.08V49.92H132.798C134.451 49.92 135.744 49.52 136.678 48.72C137.611 47.8933 138.078 46.8267 138.078 45.52C138.078 44.2133 137.611 43.1467 136.678 42.32C135.744 41.4933 134.451 41.08 132.798 41.08H128.438ZM162.39 65.44C159.723 65.44 157.27 64.8133 155.03 63.56C152.79 62.28 151.017 60.5467 149.71 58.36C148.403 56.1467 147.75 53.6933 147.75 51C147.75 48.3067 148.403 45.8667 149.71 43.68C151.017 41.4667 152.79 39.7333 155.03 38.48C157.27 37.2 159.723 36.56 162.39 36.56C165.057 36.56 167.497 37.2 169.71 38.48C171.95 39.7333 173.723 41.4667 175.03 43.68C176.337 45.8667 176.99 48.3067 176.99 51C176.99 53.6933 176.337 56.1467 175.03 58.36C173.723 60.5467 171.95 62.28 169.71 63.56C167.497 64.8133 165.057 65.44 162.39 65.44ZM162.39 61.32C164.257 61.32 165.95 60.8667 167.47 59.96C169.017 59.0533 170.23 57.8133 171.11 56.24C172.017 54.6667 172.47 52.92 172.47 51C172.47 49.08 172.017 47.3333 171.11 45.76C170.23 44.16 169.017 42.9067 167.47 42C165.95 41.0933 164.257 40.64 162.39 40.64C160.523 40.64 158.817 41.0933 157.27 42C155.723 42.9067 154.497 44.16 153.59 45.76C152.71 47.3333 152.27 49.08 152.27 51C152.27 52.92 152.71 54.6667 153.59 56.24C154.497 57.8133 155.723 59.0533 157.27 59.96C158.817 60.8667 160.523 61.32 162.39 61.32ZM187.291 65.44C185.531 65.44 183.971 65.0533 182.611 64.28C181.251 63.48 180.198 62.4 179.451 61.04C178.704 59.68 178.331 58.16 178.331 56.48H182.731C182.731 57.9467 183.144 59.12 183.971 60C184.824 60.88 185.931 61.32 187.291 61.32C188.678 61.32 189.771 60.8667 190.571 59.96C191.398 59.0267 191.811 57.7467 191.811 56.12V37H196.211V56.16C196.211 57.9467 195.838 59.5467 195.091 60.96C194.344 62.3733 193.291 63.48 191.931 64.28C190.598 65.0533 189.051 65.44 187.291 65.44ZM207.422 52.6V60.88H219.262V65H203.022V37H218.862V41.08H207.422V48.48H218.462V52.6H207.422ZM238.128 65.44C235.515 65.44 233.102 64.8133 230.888 63.56C228.675 62.28 226.915 60.5467 225.608 58.36C224.302 56.1467 223.648 53.6933 223.648 51C223.648 48.3067 224.302 45.8533 225.608 43.64C226.915 41.4267 228.675 39.6933 230.888 38.44C233.102 37.1867 235.515 36.56 238.128 36.56C241.275 36.56 244.022 37.4267 246.368 39.16C248.742 40.8933 250.448 43.24 251.488 46.2H246.888C246.062 44.4933 244.875 43.1467 243.328 42.16C241.808 41.1467 240.075 40.64 238.128 40.64C236.288 40.64 234.608 41.1067 233.088 42.04C231.568 42.9467 230.368 44.1867 229.488 45.76C228.608 47.3333 228.168 49.08 228.168 51C228.168 52.92 228.608 54.6667 229.488 56.24C230.368 57.8133 231.568 59.0533 233.088 59.96C234.608 60.8667 236.288 61.32 238.128 61.32C240.128 61.32 241.888 60.8267 243.408 59.84C244.955 58.8267 246.142 57.48 246.968 55.8H251.568C250.528 58.76 248.822 61.1067 246.448 62.84C244.075 64.5733 241.302 65.44 238.128 65.44ZM264.283 65H259.883V41.08H252.803V37H271.363V41.08H264.283V65ZM283.723 65.44C281.723 65.44 279.963 65.08 278.443 64.36C276.949 63.6133 275.789 62.5733 274.963 61.24C274.136 59.9067 273.709 58.3733 273.683 56.64H278.163C278.216 58.08 278.709 59.24 279.643 60.12C280.603 61 281.949 61.44 283.683 61.44C285.256 61.44 286.483 61.0933 287.363 60.4C288.269 59.7067 288.723 58.76 288.723 57.56C288.723 56.6267 288.456 55.8667 287.923 55.28C287.416 54.6933 286.776 54.2267 286.003 53.88C285.229 53.5067 284.149 53.0933 282.763 52.64C280.949 52.0267 279.496 51.4533 278.403 50.92C277.309 50.36 276.363 49.5333 275.563 48.44C274.789 47.3467 274.403 45.9067 274.403 44.12C274.403 42.68 274.789 41.3867 275.563 40.24C276.363 39.0933 277.456 38.2 278.843 37.56C280.256 36.8933 281.843 36.56 283.603 36.56C285.256 36.56 286.763 36.9067 288.123 37.6C289.509 38.2667 290.616 39.2267 291.443 40.48C292.296 41.7067 292.736 43.1333 292.763 44.76H288.323C288.269 43.5333 287.803 42.5333 286.923 41.76C286.069 40.96 284.923 40.56 283.483 40.56C282.149 40.56 281.056 40.88 280.203 41.52C279.349 42.16 278.923 43.0533 278.923 44.2C278.923 45.08 279.176 45.8133 279.683 46.4C280.189 46.9867 280.829 47.4533 281.603 47.8C282.403 48.1467 283.469 48.5333 284.803 48.96C286.616 49.5733 288.069 50.16 289.163 50.72C290.283 51.28 291.243 52.12 292.043 53.24C292.843 54.36 293.243 55.8267 293.243 57.64C293.243 59.1067 292.843 60.44 292.043 61.64C291.243 62.8133 290.123 63.7467 288.683 64.44C287.243 65.1067 285.589 65.44 283.723 65.44Z"
+            fill="var(--color-text-main)"></path>
+          <path
+            d="M17.4151 3.67938C17.7903 2.49475 17.1342 1.23022 15.9496 0.854966C14.7649 0.479714 13.5004 1.13584 13.1252 2.32047L17.4151 3.67938ZM71.7622 76.285C72.9298 76.7103 74.2211 76.1085 74.6463 74.9409L81.5763 55.9136C82.0015 54.7459 81.3997 53.4547 80.2321 53.0294C79.0645 52.6042 77.7732 53.206 77.348 54.3736L71.188 71.2867L54.2749 65.1268C53.1073 64.7015 51.816 65.3033 51.3907 66.4709C50.9655 67.6385 51.5673 68.9298 52.7349 69.3551L71.7622 76.285ZM32.8777 44.9744L33.2089 42.7489L32.8777 44.9744ZM13.1252 2.32047C8.29743 17.561 10.705 28.0797 15.3611 35.1153C19.9441 42.0403 26.4735 45.2374 29.3248 46.3741L30.9912 42.194C28.5494 41.2206 22.9793 38.4728 19.1138 32.6318C15.3214 26.9015 12.9316 17.8332 17.4151 3.67938L13.1252 2.32047ZM32.5466 47.1999C34.664 47.515 38.9108 48.0924 43.5979 48.4222C48.2393 48.7487 53.4996 48.8476 57.5646 48.1296C59.5698 47.7754 61.5514 47.1798 63.0217 46.1062C63.7836 45.5499 64.4654 44.8234 64.9005 43.8856C65.3432 42.9315 65.4672 41.8936 65.3095 40.8349C65.0099 38.8236 63.7037 36.7651 61.7363 34.6401C59.7213 32.4637 56.7753 29.9676 52.7518 27.0891L50.1335 30.7489C54.0321 33.5381 56.7083 35.8332 58.4342 37.6973C60.2078 39.613 60.7613 40.8444 60.8586 41.4979C60.8994 41.7717 60.8563 41.91 60.8185 41.9916C60.7731 42.0895 60.661 42.258 60.3679 42.472C59.7284 42.939 58.5561 43.3847 56.7818 43.6982C53.2878 44.3154 48.4869 44.255 43.9137 43.9333C39.3861 43.6148 35.2647 43.0548 33.2089 42.7489L32.5466 47.1999ZM52.7518 27.0891C48.3572 23.9451 45.1212 21.9136 42.8799 20.8908C41.8135 20.4042 40.6786 20.0038 39.6354 20.0176C39.0706 20.0251 38.3457 20.1564 37.6967 20.6524C37.0157 21.173 36.6934 21.8835 36.577 22.5174C36.3782 23.6 36.7238 24.7273 37.0416 25.5512C37.4012 26.4834 37.9388 27.5416 38.5842 28.6716C39.8794 30.9394 41.7479 33.7361 43.9134 36.8089C48.2282 42.9317 53.9627 50.4828 59.0115 57.4395C64.1416 64.5084 68.5419 70.9353 70.4928 75.1213L74.5716 73.2204C72.4045 68.5705 67.7274 61.7879 62.6535 54.7964C57.4982 47.6929 51.9019 40.3329 47.5917 34.2167C45.4447 31.17 43.6771 28.5152 42.4918 26.4398C41.8969 25.3983 41.4832 24.562 41.2401 23.9318C40.9553 23.1934 41.047 23.0905 41.003 23.33C40.964 23.5424 40.8213 23.9281 40.4295 24.2277C40.0697 24.5026 39.7436 24.5166 39.6949 24.5172C39.6836 24.5174 40.0492 24.5455 41.0118 24.9847C42.8283 25.8137 45.7638 27.6228 50.1335 30.7489L52.7518 27.0891ZM29.3248 46.3741C30.4221 46.8116 31.5125 47.0461 32.5466 47.1999L33.2089 42.7489C32.3715 42.6243 31.6515 42.4573 30.9912 42.194L29.3248 46.3741Z"
+            fill="var(--color-text-main)"></path>
+        </svg>
+      </div>
     </div>
-    <div class="mt-2" id="prev-exp">
+
+    <!-- Hero Image -->
+    <div class="md:col-span-1">
+      <a
+        class="profile-container block relative mb-4"
+        href="/about"
+        id="profile-wrap"
+        aria-label="About Me"
+      >
+        <img
+          id="profile-img"
+          src="/images/profile-pic.jpg"
+          alt="Profile image"
+        />
+      </a>
+      <div class="img-wrap hidden" id="about-btn">
+        <svg
+          width="199"
+          height="71"
+          viewBox="0 0 199 71"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M26.88 42H22.16L19.6 35.28H7.8L5.24 42H0.6L11.76 14H15.72L26.88 42ZM18.12 31.16L13.72 19.68L9.32 31.16H18.12ZM44.7409 27C46.2343 27.5067 47.4209 28.36 48.3009 29.56C49.2076 30.7333 49.6609 32.1333 49.6609 33.76C49.6609 35.3333 49.2609 36.7467 48.4609 38C47.6876 39.2533 46.5543 40.24 45.0609 40.96C43.5676 41.6533 41.7943 42 39.7409 42H31.0609V14H39.2209C42.1009 14 44.3543 14.68 45.9809 16.04C47.6343 17.4 48.4609 19.2 48.4609 21.44C48.4609 22.64 48.1143 23.7467 47.4209 24.76C46.7543 25.7467 45.8609 26.4933 44.7409 27ZM35.4609 17.88V25.6H39.2209C40.7143 25.6 41.8743 25.24 42.7009 24.52C43.5543 23.8 43.9809 22.8667 43.9809 21.72C43.9809 20.6 43.5543 19.68 42.7009 18.96C41.8476 18.24 40.6876 17.88 39.2209 17.88H35.4609ZM39.8209 38.08C41.4476 38.08 42.7409 37.6667 43.7009 36.84C44.6609 35.9867 45.1409 34.9333 45.1409 33.68C45.1409 32.4267 44.6609 31.3867 43.7009 30.56C42.7409 29.7067 41.4476 29.28 39.8209 29.28H35.4609V38.08H39.8209ZM68.0853 42.44C65.4186 42.44 62.9653 41.8133 60.7253 40.56C58.4853 39.28 56.712 37.5467 55.4053 35.36C54.0986 33.1467 53.4453 30.6933 53.4453 28C53.4453 25.3067 54.0986 22.8667 55.4053 20.68C56.712 18.4667 58.4853 16.7333 60.7253 15.48C62.9653 14.2 65.4186 13.56 68.0853 13.56C70.752 13.56 73.192 14.2 75.4053 15.48C77.6453 16.7333 79.4186 18.4667 80.7253 20.68C82.032 22.8667 82.6853 25.3067 82.6853 28C82.6853 30.6933 82.032 33.1467 80.7253 35.36C79.4186 37.5467 77.6453 39.28 75.4053 40.56C73.192 41.8133 70.752 42.44 68.0853 42.44ZM68.0853 38.32C69.952 38.32 71.6453 37.8667 73.1653 36.96C74.712 36.0533 75.9253 34.8133 76.8053 33.24C77.712 31.6667 78.1653 29.92 78.1653 28C78.1653 26.08 77.712 24.3333 76.8053 22.76C75.9253 21.16 74.712 19.9067 73.1653 19C71.6453 18.0933 69.952 17.64 68.0853 17.64C66.2186 17.64 64.512 18.0933 62.9653 19C61.4186 19.9067 60.192 21.16 59.2853 22.76C58.4053 24.3333 57.9653 26.08 57.9653 28C57.9653 29.92 58.4053 31.6667 59.2853 33.24C60.192 34.8133 61.4186 36.0533 62.9653 36.96C64.512 37.8667 66.2186 38.32 68.0853 38.32ZM98.8075 42.44C96.6208 42.44 94.7008 41.9867 93.0475 41.08C91.3942 40.1467 90.1142 38.84 89.2075 37.16C88.3275 35.48 87.8875 33.56 87.8875 31.4V14H92.2875V31.24C92.2875 33.3733 92.8608 35.0933 94.0075 36.4C95.1542 37.68 96.7542 38.32 98.8075 38.32C100.861 38.32 102.461 37.68 103.608 36.4C104.781 35.0933 105.368 33.3733 105.368 31.24V14H109.768V31.4C109.768 33.56 109.314 35.48 108.408 37.16C107.528 38.84 106.248 40.1467 104.568 41.08C102.914 41.9867 100.994 42.44 98.8075 42.44ZM125.369 42H120.969V18.08H113.889V14H132.449V18.08H125.369V42Z"
+            fill="white"></path>
+          <path
+            d="M98.4935 57.3704C97.8144 56.3297 98.1075 54.9356 99.1481 54.2564C100.189 53.5773 101.583 53.8704 102.262 54.911L98.4935 57.3704ZM161.706 63.8965L163.955 63.9828L161.706 63.8965ZM197.184 44.357C198.368 44.7347 199.021 46.0006 198.643 47.1845L192.487 66.4761C192.11 67.6599 190.844 68.3133 189.66 67.9356C188.476 67.5578 187.823 66.2919 188.2 65.1081L193.672 47.96L176.524 42.488C175.341 42.1102 174.687 40.8443 175.065 39.6604C175.443 38.4766 176.709 37.8232 177.892 38.2009L197.184 44.357ZM102.262 54.911C103.614 56.9833 105.046 58.1412 106.447 58.7337C107.847 59.3257 109.407 59.4345 111.157 59.0843C114.763 58.3624 118.869 55.7489 122.969 52.1543L125.936 55.538C121.68 59.2694 116.838 62.5364 112.04 63.4968C109.588 63.9877 107.082 63.8882 104.694 62.8783C102.308 61.8689 100.23 60.0312 98.4935 57.3704L102.262 54.911ZM161.077 52.5145C162.884 56.0779 164.108 59.9941 163.955 63.9828L159.458 63.8103C159.572 60.841 158.662 57.7005 157.064 54.5502L161.077 52.5145ZM163.955 63.9828C163.888 65.7193 164.108 66.4499 164.225 66.663C164.252 66.7114 164.207 66.6161 164.054 66.5414C163.917 66.4741 163.858 66.5055 163.986 66.4927C164.335 66.4581 165.053 66.213 166.252 65.4922C167.394 64.8059 168.749 63.8281 170.321 62.6094C176.491 57.8288 185.633 49.5779 195.468 44.5011L197.532 48.4998C188.185 53.3246 179.65 61.0735 173.078 66.1664C171.465 67.416 169.943 68.5237 168.57 69.349C167.255 70.1399 165.821 70.8324 164.432 70.9706C163.692 71.0442 162.868 70.9708 162.077 70.5835C161.27 70.1888 160.682 69.5585 160.283 68.8329C159.548 67.498 159.385 65.7246 159.458 63.8103L163.955 63.9828ZM122.969 52.1543C128.667 47.1587 136.141 43.627 143.204 43.0871C150.372 42.5391 157.319 45.1074 161.077 52.5145L157.064 54.5502C154.32 49.1413 149.361 47.1295 143.547 47.574C137.628 48.0265 131.044 51.0598 125.936 55.538L122.969 52.1543Z"
+            fill="white"></path>
+        </svg>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Projects -->
 <div
-  class="category flex flex-col md:flex-row w-full pl-4 relative gap-0 md:gap-0"
+  class="category flex flex-col md:flex-row w-full pl-4 relative gap-0"
+  id="projects"
 >
   <div class="category-label">
     <div class="sticky top-24 pt-10">
@@ -23,9 +90,9 @@ import ProjectButton from "../components/ProjectButton.astro";
       title="streamliming shift scheduling for nurses"
       description="BJC HealthCare"
       scopes={["Internship", "2023-2024", "UX & UI Design"]}
-      href="/projects/bjc-shift-scheduling"
+      href="/projects/bjc-flexible-scheduling"
       imgPath="../assets/images/bjc-cover-flex.jpg"
-      altText="Thumbnail of the Flexible Scheduling project"
+      altText="Cover image for the BJC Flexible Scheduling project"
     />
     <ProjectButton
       title="what nurses need to work virtually"
@@ -33,54 +100,96 @@ import ProjectButton from "../components/ProjectButton.astro";
       scopes={["Internship", "2023-2024", "UX Research"]}
       href="/projects/bjc-virtual-nursing"
       imgPath="../assets/images/bjc-cover-main.jpg"
-      altText="Thumbnail of the Virtual Nursing project"
+      altText="Cover image for the BJC Virtual Nursing project"
     />
     <ProjectButton
       title="personalizing virtual assistant demos"
       description="Rulai, Inc."
-      scopes={["Internship", "2022", "UX Design", "Solution Design"]}
+      scopes={["Internship", "2022", "UX Design", "Solution Engineer"]}
       href="/projects/rulai"
       imgPath="../assets/images/rulai-cover.jpg"
-      altText="Thumbnail of the Rulai project"
+      altText="Cover image for the Rulai project"
     />
   </div>
 </div>
 <div class="category flex flex-col md:flex-row w-full pl-4 relative">
   <div class="category-label">
     <div class="sticky pt-8 top-16">
-      <a href="#web"><div>Web</div></a>
+      <a href="#motion"><div>Motion</div></a>
     </div>
   </div>
-  <div class="project-wrap" id="web">
+  <div class="project-wrap" id="motion">
     <ProjectButton
-      title="Priya"
-      description="Flexible Scheduling App & Virtual Nursing"
-      scopes={["UX/UI Design", "User Research", "Brand Design"]}
-      href="/projects/bjc-copy"
-      imgPath="../assets/images/bjc-cover-main.jpg"
-      altText="A headshot of Priya against a brick wall background."
-    />
-  </div>
-</div>
-<div class="category flex flex-col md:flex-row w-full pl-4 relative">
-  <div class="category-label">
-    <div class="sticky pt-8 top-16">
-      <a href="#ixd"> <div>Inter<br />action</div></a>
-    </div>
-  </div>
-  <div class="project-wrap" id="ixd">
-    <ProjectButton
-      title="Priya"
-      description="Flexible Scheduling App & Virtual Nursing"
-      scopes={["UX/UI Design", "User Research", "Brand Design"]}
-      href=""
-      imgPath="../assets/images/bjc-cover-main.jpg"
-      altText="A headshot of Priya against a brick wall background."
+      title="work in progress..."
+      description=""
+      scopes={[]}
+      href="/"
+      imgPath="../assets/images/rulai-cover.jpg"
+      altText=""
     />
   </div>
 </div>
 
+<script>
+  document.addEventListener("astro:page-load", () => {
+
+    //Cursor following effect for hero section
+    function navHoverEffect(buttonId, targetId) {
+      const button = document.querySelector(buttonId) as HTMLElement;
+      const target = document.querySelector(targetId) as HTMLElement;
+
+      if (button !== null && target !== null) {
+        function follow(e) {
+          const offsetX = -24;
+          const offsetY = -1 * target.offsetHeight;
+          target.style.left = `${e.pageX + offsetX}px`;
+          target.style.top = `${e.pageY - window.scrollY + offsetY}px`;
+        }
+
+        target.style.transition =
+          "filter 200ms ease-out, visibility 100ms linear, opacity 200ms linear";
+        target.style.filter = "saturate(0%) contrast(50%)";
+        button.style.transform = "translate(0, 0)";
+        button.style.transition = "transform 400ms ease-out";
+        target.style.opacity = "0";
+
+        button.addEventListener("mouseenter", () => {
+          button.style.transform = "translate(-0.1rem, 0)";
+          target.style.display = "block";
+          target.style.visibility = "visible";
+          setTimeout(() => {
+            target.style.filter = "saturate(100%) contrast(100%)";
+            target.style.opacity = "1";
+          }, 0.2);
+          document.addEventListener("mousemove", follow);
+        });
+
+        button.addEventListener("mouseleave", () => {
+          button.style.transform = "translate(+0.1rem, 0)";
+          target.style.display = "none";
+          target.style.visibility = "hidden";
+          setTimeout(() => {
+            target.style.filter = "saturate(0%) contrast(50%)";
+            target.style.opacity = "0";
+          }, 0.2);
+        });
+      }
+    }
+
+    navHoverEffect("#profile-img", "#about-btn");
+    navHoverEffect("#project-nav", "#project-btn");
+  });
+</script>
+
 <style>
+  a {
+    border-bottom: 1.5px solid var(--color-border-secondary);
+  }
+
+  a:hover {
+    border-bottom: 1.5px solid var(--color-border-main);
+  }
+
   .project-wrap {
     width: 100%;
   }
@@ -101,15 +210,74 @@ import ProjectButton from "../components/ProjectButton.astro";
     color: var(--color-text-secondary);
   }
 
+  .img-wrap {
+    position: fixed;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+    pointer-events: none;
+    width: 12rem;
+  }
+
+  #about-btn {
+    width: 10rem;
+  }
+
   #hero {
     font-family: "LT Cushion";
     font-weight: 375;
-    font-size: 1rem;
+    font-size: 1.2rem;
     transition: all 250ms ease-in-out;
+    overflow: hidden;
+  }
+
+  #headline,
+  #prev-exp {
+    line-height: 1.1;
+    max-width: 475px;
+    max-height: 100vh;
   }
 
   #prev-exp {
+    font-family: "TT Fors";
     font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  #current {
+    font-family: "TT Fors";
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-top: 2rem;
+    line-height: 1.2;
+  }
+
+  #project-nav {
+    height: 100%;
+    margin-top: 2rem;
+  }
+
+  #profile-wrap,
+  #profil-wrap:hover,
+  #project-nav,
+  #project-nav:hover {
+    border-bottom: none;
+  }
+
+  #link-to-projects {
+    font-family: "TT Fors";
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-top: 10vh;
+    border: none;
+  }
+
+  #link-to-projects svg {
+    width: 20px;
+    display: inline;
+    fill: var(--color-text-main);
   }
 
   @media (min-width: 768px) {
@@ -121,12 +289,24 @@ import ProjectButton from "../components/ProjectButton.astro";
     }
 
     #hero {
+      padding: 0 0 2rem 11rem;
+      font-size: 1.15rem;
       border-bottom: none;
     }
 
-    #hero {
-      padding: 2rem 0 2rem 11.5rem;
-      font-size: 1.15rem;
+    #current {
+      margin-top: 12vh;
+    }
+
+    .profile-container {
+      left: 8vw;
+      /* bottom: 20vh; */
+    }
+
+    #profile-img {
+      max-height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
@@ -138,7 +318,12 @@ import ProjectButton from "../components/ProjectButton.astro";
 
     #hero {
       font-size: 1.4rem;
-      padding-left: 16.5rem;
+      padding-left: 15.5rem;
+    }
+
+    #profile-img {
+      width: 85%;
+      max-height: 800px;
     }
   }
 
@@ -149,7 +334,7 @@ import ProjectButton from "../components/ProjectButton.astro";
     }
 
     #hero {
-      padding-left: 20.75rem;
+      padding-left: 20rem;
     }
   }
 </style>

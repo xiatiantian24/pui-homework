@@ -1,55 +1,59 @@
 ---
+import "../styles/global.css";
 const { coverSquare } = Astro.props;
 ---
 
 <logo-element>
   <div id="logo" class="logo-container">
-    <a href="/">
+    <a href="/" aria-label="Home Page">
       <svg width="200" height="200" viewBox="0 0 200 200">
+        <!-- Bottom square -->
         <rect
           x="50"
           y="50"
           width="100"
           height="100"
-          stroke="#454545"
+          stroke="var(--color-text-secondary)"
           stroke-width="5"
           fill="none"
           rx="1"
           ry="1"
-          transform="rotate(45 100 100)"></rect>
+          transform="rotate(45, 0, 0)"></rect>
 
+        <!-- Cover square -->
         <!-- Referenced Stack Overflow to pass classes to child components.
          https://stackoverflow.com/questions/75933212/can-i-pass-additional-classes-to-an-astro-component-from-parent
          -->
         <rect
           id="cover-square"
-          class:list={[coverSquare || "coverSquare-white"]}
+          class:list={[coverSquare || "coverSquare-main"]}
           width="45"
           height="45"
           rx="10"
           ry="10"
-          transform="rotate(45 100 100) translate(53, 137.5)"
-          visibility="visible"></rect>
+          transform="rotate(45, 0, 0) translate(52.5,125)"></rect>
 
+        <!-- Line 1 -->
         <line
           id="line1"
           x1="100"
           y1="50"
           x2="100"
           y2="150"
-          transform="rotate(45 100 100)"
-          stroke="#454545"
+          transform="rotate(0, 0, 0) scale(1, 1.4)"
+          stroke="var(--color-text-secondary)"
           stroke-width="5"
           stroke-linecap="round"></line>
 
+        <!-- Line 2 -->
         <line
           id="line2"
           x1="50"
           y1="100"
           x2="150"
           y2="100"
-          transform="rotate(45 100 100)"
-          stroke="#454545"
+          transform="rotate(0, 0, 0) scale(1.4, 1)"
+          stroke="var(--color-text-secondary)"
           stroke-width="5"
           stroke-linecap="round"></line>
       </svg>
@@ -62,24 +66,29 @@ const { coverSquare } = Astro.props;
     connectedCallback() {
       const logo = this.querySelector("#logo");
       const coverSquare = this.querySelector("#cover-square");
+      const line1 = document.getElementById("line1");
+      const line2 = document.getElementById("line2");
 
+      // Effect on mouse hover
       logo.addEventListener("mouseenter", () => {
         coverSquare.setAttribute(
           "transform",
-          "rotate(45 100 100) translate(35, 35)"
+          "rotate(45, 0, 0) translate(25, 25) scale(1.6, 1.6)"
         );
-        coverSquare.setAttribute("visibility", "visible");
+        line1.setAttribute("transform", "rotate(45, 0, 0) scale(1, 1)");
+        line2.setAttribute("transform", "rotate(45, 0, 0) scale(1, 1)");
       });
 
-      // Referenced ChatGPT to calculation the math of adjusted mouse positino due to logo ratation 
+      // Follow effect for cover square
+      // Referenced ChatGPT to calculation the math of adjusted mouse positino due to logo ratation
       logo.addEventListener("mousemove", (event) => {
         const mouseEvent = event as MouseEvent;
         const rect = logo.getBoundingClientRect();
         const mouseX = mouseEvent.clientX - rect.left;
         const mouseY = mouseEvent.clientY - rect.top;
 
-        const adjustedMouseX = mouseX - 20;
-        const adjustedMouseY = mouseY - 10;
+        const adjustedMouseX = mouseX - 15;
+        const adjustedMouseY = mouseY + mouseY * 0.6;
 
         const rotatedX =
           adjustedMouseX * Math.cos(Math.PI / 4) +
@@ -94,12 +103,18 @@ const { coverSquare } = Astro.props;
         coverSquare.setAttribute("y", rotatedY * 2.4);
       });
 
+      // Reverse effect on mouse leave
       logo.addEventListener("mouseleave", () => {
         coverSquare.setAttribute("width", "45");
         coverSquare.setAttribute("height", "45");
-        coverSquare.setAttribute("transform", "rotate(45 100 100)");
-        coverSquare.setAttribute("x", "53");
-        coverSquare.setAttribute("y", "137.5");
+        coverSquare.setAttribute(
+          "transform",
+          "rotate(45, 0, 0) translate(0,0) scale(1,1)"
+        );
+        coverSquare.setAttribute("x", "52.5");
+        coverSquare.setAttribute("y", "125");
+        line1.setAttribute("transform", "rotate(0, 0, 0) scale(1, 1.4)");
+        line2.setAttribute("transform", "rotate(0, 0, 0) scale(1.4, 1)");
       });
     }
   }
@@ -108,15 +123,25 @@ const { coverSquare } = Astro.props;
 
 <style>
   .logo-container svg {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
   }
 
-  #cover-square {
-    transition: transform 500ms ease;
+  svg * {
+    transform-origin: center;
+  }
+
+  #cover-square,
+  #line1,
+  #line2 {
+    transition: transform 400ms ease;
   }
 
   .coverSquare-white {
     fill: #fff;
+  }
+
+  .coverSquare-main {
+    fill: var(--color-bg-main);
   }
 </style>
