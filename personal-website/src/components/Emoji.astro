@@ -1,0 +1,138 @@
+---
+const images = [
+  {
+    button: {
+      image: "/images/about/emoji-question.png",
+      alt: "Question mark emoji",
+    },
+    mainImage: {
+      src: "/images/about/face-question.jpg",
+      alt: "Question mark prosthesis",
+    },
+  },
+  {
+    button: {
+      image: "/images/about/emoji-lightbulb.png",
+      alt: "Light bulb emoji",
+    },
+    mainImage: {
+      src: "/images/about/face-lightbulb.jpg",
+      alt: "Light bulb prosthesis",
+    },
+  },
+  {
+    button: {
+      image: "/images/about/emoji-anger.png",
+      alt: "Angry emoji",
+    },
+    mainImage: {
+      src: "/images/about/face-anger.jpg",
+      alt: "Angry prosthesis",
+    },
+  },
+  {
+    button: {
+      image: "/images/about/emoji-droplet.png",
+      alt: "Droplet emoji",
+    },
+    mainImage: {
+      src: "/images/about/face-droplet.jpg",
+      alt: "Droplet prosthesis",
+    },
+  },
+];
+---
+
+<div class="md:col-span-1 items-center align-middle pt-4 emoji-wrapper">
+  <div class="img-container">
+    <img
+      src="/images/about/face-preview.jpg"
+      alt="Emoji Prosthesis cover image"
+      id="mainDisplayImage"
+      style="aspect-ratio: 1483/989;"
+      loading="eager"
+    />
+  </div>
+
+  <div class="button-container flex justify-center">
+    {
+      images.map((img) => (
+        <button
+          class="emoji-button hover:scale-105 transition-transform duration-300 focus:scale-105 w-fit"
+          data-main-image={img.mainImage.src}
+          data-main-alt={img.mainImage.alt}
+          aria-label={`View ${img.mainImage.alt}`}
+        >
+          <img
+            src={img.button.image}
+            alt={img.button.alt}
+            style="aspect-ratio: 1/1; max-width: 128px;"
+          />
+        </button>
+      ))
+    }
+  </div>
+  <div class="hidden md:flex justify-center text-sm description pt-4">
+    Hover on one of the emojis to see prosthesis
+  </div>
+  <div class="flex md:hidden justify-center text-sm description pt-4">
+    Click on one of the emojis to see prosthesis
+  </div>
+</div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const mainDisplayImage = document.getElementById(
+      "mainDisplayImage"
+    ) as HTMLImageElement;
+    const buttons = document.querySelectorAll(".emoji-button");
+    const container = document.querySelector(".emoji-wrapper");
+
+    mainDisplayImage.src = "/images/about/face-preview.jpg";
+    mainDisplayImage.alt = "Emoji Prosthesis cover image";
+
+    buttons.forEach((button) => {
+      button.addEventListener("mouseenter", () => {
+        const mainImageSrc = button.getAttribute("data-main-image");
+        const mainImageAlt = button.getAttribute("data-main-alt");
+
+        mainDisplayImage.src = mainImageSrc;
+        mainDisplayImage.alt = mainImageAlt;
+      });
+
+      button.addEventListener("click", () => {
+        const mainImageSrc = button.getAttribute("data-main-image");
+        const mainImageAlt = button.getAttribute("data-main-alt");
+
+        mainDisplayImage.src = mainImageSrc;
+        mainDisplayImage.alt = mainImageAlt;
+      });
+    });
+
+    container.addEventListener("mouseleave", () => {
+      mainDisplayImage.src = "/images/about/face-preview.jpg";
+      mainDisplayImage.alt = "Emoji Prosthesis cover image";
+    });
+  });
+</script>
+
+<!-- <script>
+  for (const button in container) {
+    button.addEventListener("click", buttonOnClick);
+  }
+  function fullImage(src, alt) {
+    const fullImageElement = document.querySelector("#");
+    fullImageElement.src = src;
+    fullImageElement.alt = alt;
+  }
+  function buttonOnClick(e) {
+    fullImage(e.target.src, e.target.alt);
+  }
+</script> -->
+
+<style>
+  .description {
+    font-family: "TT Fors";
+    color: var(--color-text-secondary);
+  }
+</style>

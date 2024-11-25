@@ -1,15 +1,191 @@
 ---
-import GalleryLayout from "../layouts/GalleryLayout.astro";
+import "../styles/global.css";
+import AboutLayout from "../layouts/AboutLayout.astro";
+import Resume from "../components/Resume.astro";
+import Emoji from "../components/Emoji.astro";
 
-const pageTitle = "About";
+const pageTitle = "Ray Xia - About";
 ---
 
-<GalleryLayout pageTitle={pageTitle}>
-  <main>
-    <div class="flex justify-center items-center h-screen">
-      <span>Work in progress</span>
+<AboutLayout pageTitle={pageTitle}>
+  <main class="w-full mt-16 mb-32 md:mt-12 mb-16 px-6">
+    <!-- Profile & About -->
+    <div
+      class="category grid md:grid-cols-2 w-full relative gap-2 mb-32"
+      id="projects"
+    >
+      <div class="md:col-span-1">
+        <div class="profile-container block relative mb-8">
+          <img
+            id="profile-img"
+            src="/images/about/profile-pic.jpg"
+            alt="Profile image"
+          />
+        </div>
+      </div>
+      <div id="about-me" class="md:col-span-1">
+        <div class="w-full mb-16">
+          <div>
+            <div class="line"></div>
+            <div class="items-end">
+              <h1>Ray Xia*</h1>
+              <div class="note">
+                * Pronounced “shee-ah,” with your lower jaw slightly forward :)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="">
+            Hi there, I'm Ray. I love playing around with tools and thinking
+            about why they're made the way they are.
+          </p>
+
+          <p class="">
+            My background is in visual design, and I got very into bringing
+            service innovations to life through designing apps, websites, AI
+            chatbots, and caregiving experiences for small and large companies.
+          </p>
+
+          <p class="">
+            I'm currently pursuing a master's degree in human-computer
+            interaction at Carnegie Mellon, where I'm learning how to make
+            AI-powered products more explainable and acceptable.
+          </p>
+
+          <p class="">
+            But beyond all, my motivation comes from being endlessly inquisitive
+            about the world's and helping make others' dreams come true.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resume -->
+    <div
+      class="category md:grid md:grid-cols-2 w-full relative gap-2 mb-32"
+      id="resume"
+    >
+      <div class="category-label md:col-span-1 pt-4">
+        <div class="sticky top-24 block relative mb-8">
+          <div>
+            <div>Resume</div>
+            <a
+              href="/pdfs/ray_xia_resume.pdf"
+              download
+              class="inline-block button-sm"
+            >
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+      <Resume />
+    </div>
+
+    <!-- Random Things I Do -->
+    <div class="category" id="random">
+      <div class="category-label py-4">Random Things I Make</div>
+      <!-- Emoji Prosthesis -->
+      <div class="md:grid md:grid-cols-2 w-full relative gap-2">
+        <div class="category-label md:col-span-1 pt-4">
+          <div class="line"></div>
+          <div>Emoji Prosthesis</div>
+          <div class="text-sm description pb-4">
+            In case you forgot to bring your phone.
+          </div>
+          <a
+            href="https://drive.google.com/file/d/1KEFXON0NZjVaJPbWqj-rapZCItWqnyEB/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferer"
+            class="button-sm">View Prosthesis In Action</a
+          >
+        </div>
+        <Emoji />
+      </div>
     </div>
   </main>
-</GalleryLayout>
+</AboutLayout>
 
-<style></style>
+<style>
+  h1 {
+    font-family: "TT Fors";
+    line-height: 1;
+    letter-spacing: 0.04rem;
+    font-weight: 450;
+    font-size: 1.6rem;
+    margin-right: 15%;
+    margin-bottom: 0.6rem;
+  }
+
+  h2 {
+    font-family: "TT Fors";
+    text-transform: uppercase;
+    line-height: 1.1;
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+
+  p {
+    margin-bottom: 0.9rem;
+  }
+
+  #about-me {
+    max-width: 28rem;
+  }
+
+  #resume,
+  #random {
+    border-top: 1.5px solid var(--color-border-secondary);
+  }
+
+  .button-sm {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    border-bottom: 1.5px solid var(--color-border-secondary);
+  }
+
+  .button-sm:hover {
+    color: var(--color-text-main);
+    border-bottom: 1.5px solid var(--color-border-main);
+  }
+
+  .line {
+    width: 26px;
+    border-bottom: 1.5px solid var(--color-border-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .note {
+    font-size: 0.8rem;
+    line-height: 1.1;
+  }
+
+  .category-label {
+    font-family: "TT Fors";
+  }
+
+  .description {
+    color: var(--color-text-secondary);
+  }
+
+  @media screen and (min-width: 768px) {
+    .profile-container {
+      right: 4vw;
+    }
+    #profile-img {
+      max-height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    #profile-img {
+      width: 75%;
+      max-height: 800px;
+    }
+  }
+</style>
