@@ -1,0 +1,98 @@
+---
+
+---
+
+<button class="button-sm" id="theme-toggle" aria-label="Change color scheme">
+</button>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const themeToggleButton = document.getElementById("theme-toggle");
+
+    // Function for updating site theme
+    const applyTheme = (theme) => {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
+        themeToggleButton.textContent = "Current mode: dark";
+      } else {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
+        themeToggleButton.textContent = "Current mode: light";
+      }
+      localStorage.setItem("theme", theme);
+    };
+
+    // Detect initial theme: apply local storage if exists, then looks up system mode
+    const theme = (() => {
+      if (
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem("theme")
+      ) {
+        return localStorage.getItem("theme");
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "light";
+    })();
+
+    applyTheme(theme);
+
+    // Listen to toggle button event
+    themeToggleButton.addEventListener("click", () => {
+      const newUserTheme = document.documentElement.classList.contains("dark")
+        ? "light"
+        : "dark";
+      applyTheme(newUserTheme);
+    });
+
+    // Listen to system mode event
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", () => {
+        const isDarkMode = window.matchMedia(
+          //a MediaQuery object
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const newSystemTheme = isDarkMode ? "dark" : "light";
+        applyTheme(newSystemTheme);
+      });
+  });
+
+  // A separate document event listener that handles page navigation
+  document.addEventListener("astro:after-swap", () => {
+    const themeToggleButton = document.getElementById("theme-toggle");
+    const theme =
+      localStorage.theme ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+      themeToggleButton.textContent = "Current mode: dark";
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      themeToggleButton.textContent = "Current mode: light";
+    }
+  });
+</script>
+
+<style>
+  .button-sm {
+    font-family: "Figtree";
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    border-bottom: 1.5px solid var(--color-border-secondary);
+    pointer-events: auto;
+  }
+
+  .button-sm:hover {
+    color: var(--color-text-main);
+    border-bottom: 1.5px solid var(--color-border-main);
+  }
+</style>

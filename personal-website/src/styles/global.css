@@ -16,55 +16,89 @@
 
 :root,
 :root.light {
-  scroll-behavior: smooth;
   scroll-padding-top: 12rem;
 
   --color-text-main: rgba(50, 50, 50, 1);
   --color-text-secondary: rgba(99, 99, 99, 1);
-  --color-text-tertiary: rgb(154, 154, 154);
+  --color-text-tertiary: rgba(99, 99, 99, 1);
+  --color-text-highlight: rgba(24, 24, 24, 1);
   --color-bg-main: rgba(252, 251, 248, 1);
+  --color-bg-secondary: rgba(244, 242, 238, 1);
   --color-bg-white: rgba(255, 255, 255, 1);
   --color-border-main: rgba(99, 99, 99, 1);
   --color-border-secondary: rgba(199, 199, 199, 1);
+  --color-highlight: rgba(227, 220, 209, 1);
+}
 
-  /* h6, caption  */
-  --font-size-small: clamp(0.813rem, 0.063vw + 0.8rem, 0.875rem);
+.dark {
+  --color-text-main: rgba(233, 230, 230, 1);
+  --color-text-secondary: rgba(192, 192, 192, 1);
+  --color-text-tertiary: rgb(209, 209, 209);
+  --color-text-highlight: rgba(24, 24, 24, 1);
+  --color-bg-main: rgba(77, 77, 77, 1);
+  --color-bg-secondary: rgba(96, 96, 96, 1);
+  --color-border-main: rgba(148, 148, 148, 1);
+  --color-border-secondary: rgba(120, 120, 120, 1);
+  --color-highlight: rgba(221, 213, 201, 1);
+}
 
-  /* paragraph  */
-  --font-size-medium: 1rem;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-main: rgba(233, 230, 230, 1);
+    --color-text-secondary: rgba(192, 192, 192, 1);
+    --color-text-tertiary: rgb(209, 209, 209);
+    --color-text-highlight: rgba(24, 24, 24, 1);
+    --color-bg-main: rgba(77, 77, 77, 1);
+    --color-bg-secondary: rgba(96, 96, 96, 1);
+    --color-border-main: rgba(148, 148, 148, 1);
+    --color-border-secondary: rgba(120, 120, 120, 1);
+    --color-highlight: rgba(221, 213, 201, 1);
+  }
+}
 
-  /* h3 */
-  --font-size-large: clamp(1rem, 0.25vw + 1rem, 1.25rem);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  /* h2 */
-  --font-size-xlarge: clamp(1.25rem, 0.5vw + 1.15rem, 1.75rem);
+img,
+svg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-  /* h1 */
-  --font-size-xxlarge: clamp(1.5rem, 0.625vw + 1.375rem, 2.125rem);
+html {
+  background-color: var(--color-bg-main);
+  font-family: "Figtree", sans-serif;
+  font-style: normal;
+  color: var(--color-text-main);
+  /* transition: background-color 0.2s ease, color 0.2s ease; */
+}
 
-  --font-weight-reg: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+body {
+  line-height: 1.65;
+  font-size: 100%;
+}
 
-  --lh-small: 135%;
-  --lh-medium: 150%;
-  --lh-large: 160%;
-  --lh-xlarge: 175%;
+.bg-main {
+  background-color: var(--color-bg-main);
+}
 
-  --border-radius-xsmall: 0.25rem;
-  --border-radius-small: 0.5rem;
-  --border-radius-medium: clamp(0.25rem, 0.5vw + 0.15rem, 0.75rem);
-  --border-radius-large: 1rem;
+.coverSquare-main {
+  fill: var(--color-bg-main);
+}
 
-  --nav-height: 60px;
-  --illustration-height: clamp(30rem, 20vw + 21rem, 45rem);
-  --card-padding: clamp(0.75rem, 0.75vw + 0.6rem, 1.5rem);
+::selection {
+  background: var(--color-highlight);
+  color: var(--color-text-highlight);
 }
 
 @font-face {
   font-family: "Figtree";
-  src: url("./fonts/Figtree-Italic-VariableFont_wght.otf") format("truetype");
+  src: url("./fonts/Figtree-Italic-VariableFont_wght.ttf") format("truetype");
   font-weight: 300 900;
   font-style: italic;
   font-display: swap;
@@ -92,6 +126,14 @@
   src: url("./fonts/TT-Fors-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Fors";
+  src: url("./fonts/TT-Fors-Medium-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -157,37 +199,4 @@
   font-weight: 200 700;
   font-style: normal;
   font-display: swap;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-img,
-svg {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-html {
-  background-color: var(--color-bg-main);
-  font-family: "Figtree", sans-serif;
-  color: var(--color-text-main);
-}
-
-body {
-  line-height: 1.65;
-  font-size: 100%;
-}
-
-.bg-main {
-  background-color: var(--color-bg-main);
-}
-
-.coverSquare-main {
-  fill: var(--color-bg-main);
 }
