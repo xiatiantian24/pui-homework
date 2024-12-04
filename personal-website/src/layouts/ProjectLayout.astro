@@ -1,0 +1,159 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const {
+  projectTitle,
+  projectDescription,
+  summary,
+  tags,
+  detail1Title,
+  detail1Content,
+  detail2Title,
+  detail2Content,
+  detail3Title,
+  detail3Content,
+  linksURL,
+  linksTitle,
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{projectTitle}</title>
+  </head>
+
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <Nav bg="bg-main" showButtons={true}/>
+      <main class="w-full">
+        <!-- Overview -->
+        <div class="project-overview flex flex-col items-center gap-24 my-12 max-w-5xl mx-auto md:flex-row mt-24 mb-12 px-6">
+          <div class="w-full flex flex-col items-center gap-6 md:gap-8">
+            <div class="w-full flex flex-col items-center gap-2">
+              <h2 class="text-base text-center md:text-lg">{projectDescription}</h2>
+              <h1 class="text-2xl text-center md:text-5xl pb-1">{projectTitle}</h1>
+            </div>
+            <div class="tags flex flex-wrap text-xs pb-1">
+              {
+                tags.map((tag,index) => (
+                index == (tags.length - 1) ?
+                <p>{tag}</p> : 
+                <p>{tag}</p> <span class="px-2">&#47;</span>
+                ))
+                } 
+            </div>
+          </div>
+        </div>
+
+        <!-- Slot for cover image -->
+        <slot name="cover-img" />
+        <slot />
+
+        <!-- Detail Lists -->
+        <div
+          class="detail-box w-8/12 my-28 md:my-36 max-w-2xl mx-auto flex flex-col items-start gap-8 py-8 px-4 text-sm"
+        >
+          <div class="line hidden md:flex"></div>
+          <div class="grid grid-cols-1 w-full md:grid-cols-10">
+            <div class="detail mb-8 md:mb-0 px-1 md:col-span-3">
+              <div class="detail-title">{detail1Title}</div>
+              <div class="detail-content">
+                {detail1Content.map((content) => <div class="detail-item">{content}</div>)}
+              </div>
+            </div>
+            <div class="detail mb-8 md:mb-0 px-1 md:col-span-4">
+              <div class="detail-title">{detail2Title}</div>
+              <div class="detail-content">
+                {detail2Content.map((content) => <div class="detail-item">{content}</div>)}
+              </div>
+            </div>
+            {detail3Title && <div class="detail mb-8 md:mb-0 px-1 md:col-span-3">
+              <div class="detail-title">{detail3Title}</div>
+              <div class="detail-content">
+                {detail3Content.map((content) => <div class="detail-item">{content}</div>)}
+              </div>
+              <div class="detail-content flex flex-col items-start gap-1">
+                {
+                  linksURL && linksURL.map((url, index) => (
+                    <a class="flex flex-row detail-item" href={url}>
+                      {linksTitle[index]}
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Slot for project content -->
+        <slot name="content" />
+        <slot />
+        
+        <Footer />
+        <script></script>
+      </main>
+    </div>
+  </body>
+
+  <style>
+    main {
+      background-color: var(--color-bg-main);
+    }
+
+    h1 {
+      font-family: "LT Cushion";
+      font-weight: 300;
+      letter-spacing: -0.0125em;
+      line-height: 0.9;
+      transform: scaleY(1.05);
+      margin: 0.5rem 0;
+    }
+
+    h2 {
+      line-height: 1.35;
+      font-weight: 400;
+    }
+
+    .tags {
+      font-family: "TT Fors";
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .detail-box {
+      border: 1.5px solid var(--color-border-secondary);
+    }
+
+    .detail-title {
+      font-family: "LT Cushion";
+      text-transform: uppercase;
+      font-weight: 500;
+      padding-bottom: 0.3rem;
+    }
+
+    .detail-item {
+      padding-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .line {
+      width: 26px;
+      border-bottom: 1.5px solid var(--color-border-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .detail-title {
+      padding-bottom: 0.5rem;
+    }
+  }
+  </style>
+</html>

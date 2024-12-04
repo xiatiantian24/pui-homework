@@ -1,15 +1,81 @@
 ---
-import GalleryLayout from "../layouts/GalleryLayout.astro";
-
-const pageTitle = "Work in progress";
+import "../styles/global.css";
+import "../styles/project.css";
+import ProjectLayout from "../layouts/ProjectLayout.astro";
 ---
 
-<GalleryLayout pageTitle={pageTitle}>
-  <main>
-    <div class="flex justify-center items-center h-screen">
-      <span>Work in progress</span>
-    </div>
-  </main>
-</GalleryLayout>
+<ProjectLayout
+  projectTitle="Personalizing virtual assistant demos"
+  projectDescription="Rulai, Inc."
+  tags={["UX", "Internship", "2022"]}
+  detail1Title="Role"
+  detail1Content={[
+    "UX Design",
+    "Conversation Design",
+    "Solution Engineering",
+    "Front-end Engineering",
+  ]}
+  detail2Title="Team"
+  detail2Content={[
+    "Daniel Chen (Developer)",
+    "Law Black (Sales)",
+    "Lawrence Yau (Product Manager)",
+  ]}
+  detail3Title="Timeline"
+  detail3Content={["3 months"]}
+>
+  <!-- Cover Image -->
+  <img
+    class="cover-img mx-auto"
+    src="/images/rulai-cover.jpg"
+    alt="Rulai Inc."
+    slot="cover-img"
+    width="1440"
+  />
 
-<style></style>
+  <!-- Summary -->
+  <div class="project-content px-6" slot="content">
+    <section class="summary mb-36 md:mb-48">
+      <h3>sole designer at a low code platform</h3>
+      <div>
+        <div>
+          <p>
+            <a href="https://rul.ai/" target="_blank" rel="noopener noreferrer">
+              Rulai</a
+            > is a low-code AI Virtual Assistant platform for businesses.
+          </p>
+          <p>
+            Through the summer of 2022, I joined Rulai as the sole designer. To
+            tackle the inquiries from businesses in various industries and
+            sizes, I designed a new live demo system that allows prospects to
+            explore the Virtual Assistant Studio in their own desired way. They
+            can ask about a specific use case, and interact with the tool to see
+            its corresponding features being built in action.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</ProjectLayout>
+
+<style>
+  body,
+  nav {
+    background-color: #fff;
+  }
+
+  .tip {
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid .img-medium {
+      height: 100%;
+    }
+
+    .grid .img-bg {
+      background-color: #f4f4f4;
+      align-content: center;
+    }
+  }
+</style>
