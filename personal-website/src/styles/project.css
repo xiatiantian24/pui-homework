@@ -1,0 +1,129 @@
+section {
+  max-width: 42rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+h3 {
+  font-family: "LT Cushion";
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+h4 {
+  font-family: "TT Fors";
+  font-size: 0.75rem;
+  font-weight: 450;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.3rem;
+}
+
+p {
+  margin-bottom: 0.9rem;
+}
+
+p a {
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  position: relative;
+  transition: 100ms ease;
+  pointer-events: auto;
+  border-bottom: 1.5px solid var(--color-border-secondary);
+}
+
+a:hover {
+  color: var(--color-text-main);
+  border-bottom: 1.5px solid var(--color-border-main);
+}
+
+figcaption {
+  color: var(--color-text-secondary);
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  /* max-width: 42rem; */
+}
+
+ul {
+  list-style: square;
+}
+
+li {
+  margin-left: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+li::marker {
+  color: var(--color-text-secondary);
+}
+
+.em {
+  font-weight: 600;
+}
+
+.image-gallery-grid {
+  max-width: 84rem;
+}
+
+.result-highlight {
+  font-family: "LT Cushion";
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+
+.tip {
+  padding: 2rem 2.8rem;
+  font-size: 0.9rem;
+  color: var(--color-text-tertiary);
+  background-color: var(--color-bg-secondary);
+  border-radius: 8px;
+}
+
+.tip-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.tip .icon {
+  margin-right: 0.25rem;
+}
+
+.tip-body {
+  line-height: 1.4;
+}
+
+.note {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.quote {
+  font-style: italic;
+}
+
+.link-next-part {
+  font-family: "LT Cushion";
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  border-bottom: none;
+  transition: 300ms ease-out;
+}
+
+.link-next-part svg {
+  width: 28px;
+}
+
+.link-next-part:hover {
+  color: var(--color-text-main);
+}
+
+.link-next-part:hover {
+  transform: translateY(4px);
+}
