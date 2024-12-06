@@ -1,3 +1,139 @@
+# **FP4 \- Final Project Writeup**
+
+## Part 1: Website Description
+
+> **Note: Please find my live site [here deployed on Netlify](https://rayx-pui-final-project.netlify.app/)**. It is not available on Github pages due to the installation of Astro framework. Please contact rayx@andrew.cmu.edu if you have trouble accessing the site.
+
+---
+
+> Purpose
+* My website is a personal portfolio that documents my past projects and hobbies.
+
+> Audience
+* The primary target audience of the site are potential recruiters looking for UX Design/Engineering roles, but it can also be for anyone interested in getting to know me.
+
+> Information to convey
+* Overall, I wish to showcase my skills in interaction design, web development, creativity, my passion for design, and my personal values and aesthetics through my website. 
+
+* The first section you will see on the home page is a quick introduction of what I do as a profession, where my previous experience come from, and a profile image.
+
+* Scrolling down to the main section of the home page, you will see a list of my projects, each including a short description about what it is, who it's made for, the year completed, and my roles in that project.
+
+* The about me page features a longer self-introduction, a copy of my resume, and a fun 3D design I made to demonstrates my creativity, passion, and craft.
+
+
+> How my site is interesting and engaging
+* Audience will find the website interesting and engaging by appreciating its minimal aesthetics as well as exploring multiple satisfying micro-interactions throughout the site.
+
+* Specifically, the aesthetics emphasize on organizing text-heavy pages with minimal color, strong contrast, and bold visual hierarchy.
+
+* Microinteractions such as a dynamic SVG logo and mouse-following buttons add a sense of quirkiness to the sight while keeping the overall tone of site professional and clean.
+
+## Part 2: User Interaction
+
+> Home page
+1. Hover/Navigation: Move mouse around the home page to see options to navigate to 'Projects' or 'About' page.
+
+2. Hover/Navigation: Scroll down on home page. Move mouse around to see cover images for each project. Click to navigate to the project detail page.
+
+> About page
+1. Download: Scroll down to resume section on about page. Click 'Download Resume' on the left to download a pdf of the resume.
+
+2. Hover: Scroll down further on about page. Hover on the emojis to see image change.
+
+> Nav bar
+1. Hover/Navigation: Hover and move mouse around on the logo on the top left of the page to see hover effect. Click to go back to home page.
+
+2. Navigation: Click 'Projects' or 'About' to navigate to according pages.
+
+> Footer
+1. Toggle: Toggle 'Current mode' to switch the site between light and dark mode.
+
+## Part 3: External Tool
+
+Describe what important external tool you used (JavaScript library, Web API, animations, or other). Following the bulleted list format below, reply to each of the prompts.
+
+1. [Astro](https://astro.build/)
+   * Used for creating reusable components and layout for my site, such as nav bars, footers, and project buttons. 
+   * I chose Astro over React because while both are component-based, React might be an overkill for a small project like my personal website. 
+   * Astro adds organization and efficiency to my development process, and also makes my site content-driven with reduced JavaScript overhead and complexity.
+  
+2. [Tailwind CSS](https://tailwindcss.com/)
+   * I chose Tailwind over other CSS frameworks like Bootstrap because it allows me to add styling more rapidly with pre-defined CSS while also leaving room for customized styles at the same time. 
+   * Used in combination with Astro to add styling to my components, such as `flex flex-col gap-4`. 
+   * Tailwind adds semantic styling across my site, E.g., using `text-sm` and `text-lg` to distinguish different text size.
+
+
+## Part 4: Design Iteration
+
+I made three iterations of the design prototypes. 
+
+The first two versions require hovering on accordions and moving the mouse around to read the image and text on buttons, which I later found can be too much animation and cause visibility issue on smaller screens. Specifically, I observed one testing participant accidentally moving the cursor outside of the accordion, which cause it to collapse and brought them frustration. They wish the images can get smaller in order for them to read the text easier. 
+
+I decided to remove the accordion altogether in tha later iteration and only keep the hovering effect for images, which is the main interaction I wish to stand out on the home page.
+
+## Part 5: Implementation Challenge
+
+1. My JavaScript were only able to execute once per browser session at first. After reading the Astro documentation I realized that it was due how JavaScript is injected at where it’s declared with `type="module"` and will only be included once, which will require workarounds scuh as using the `astro:page-load` event.
+
+2. Making the site responsible was at first challenging mainly because I did not prototype a smaller screen in Figma prior to implementation. Gladly, I was able to solve it using grid template columns and using `@media` rules in CSS without changing too much of the design.
+
+## Part 6: Generative AI Use and Reflection
+
+### Usage Experiences by Project Aspects
+
+| Tool Name | Ratings | design | plan | write code | debug | 
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| ChatGPT | Usage | No | No | Yes | Yes
+| ChatGPT | Productivity | N/A | N/A | 5 | 7 
+
+
+### Usage Reflection
+
+> Impact on your design and plan 
+* It matched my expectations and plan in [FP2](#generative-ai-use-plan) in helping me understand syntax and logic errors. For example, 
+  1. ChatGPT: learning how SVG transform attributes are parsed, such as `scaleY(0.9)` is not valid a transform attribute of SVG but `scale(1, 0.9)` is valid.
+
+* It did not match my expectations and plan in [FP2](#generative-ai-use-plan) in that I said I will not use it to write functions because it won't help me practice what I've learned in the class. For example, 
+  1. ChatGPT: The design of animating SVG exceeded my knowledge learned from the class so I decided to reference the structure of the function that ChatGPT provided. I replaced the function detail with my own content, though.
+
+* GenAI tool did not influence my final design and implementation plan because I have built a high-fidelity design before implementing it. For example, 
+  1. ChatGPT: I started using ChatGPT to debug and provide specific logic references only after I have created the base code that largely matches the design style and interactions.
+
+> Use patterns
+* I accepted the generations when it helped me understand and guided me through a bug fix. For example, 
+  1. ChatGPT: I had a missalignment of mouse movement in a mouse follow event and I didn't understand why. ChatGPT read my code and explained that it was due to rotation done on my original svg and provided a math function that realign the X and Y position of the mouse position. I accept the additional math function because it helped me achieve the animation I wanted for my design.
+
+* I critiqued/evaluated the generated suggestions when it generates code with styling. For example, 
+  1. ChatGPT: It generated code that did not match my intended design for a filter transition animation. I read the code and understood that it had a correct logic but was using the wrong properties on the wrong target. I referenced the logic and applied it to my design.
+
+
+> Pros and cons of using GenAI tools
+* Pros
+  1. ChatGPT: Better understand error messages and possible reasons that cause them. E.g., inferring why a css transition doesn't work as intended.
+
+* Cons
+  1. ChatGPT: Need to be cautious with generated code. It may unecessary complicate the problem and beat around the bush when there is a more direct fix. E.g., providing code to fix a update issue in the function while the real issue is about Astro's bundle rendering.
+
+### Usage Log
+
+1. [ChatGPT log for fixing Project Button css transition effect
+](https://chatgpt.com/share/6750ca5d-2530-800b-bd9c-df03beb7b7c4)
+
+2. [ChatGPT log for the Logo rotation effect and fixed mouse positioning
+](https://chatgpt.com/share/6750cb04-8e6c-800b-ba39-1e635b096802)
+
+### Non-Gen AI References
+
+1. Footer base code referenced from [Dante Astro Template](https://github.com/JustGoodUI/dante-astro-theme/blob/main/src/components/Footer.astro) by Asta Bankauske, 
+     Front-End Developer, Co-Founder @JustGoodThemes & @JustGoodUI.
+
+2. Referenced [Stack Overflow](https://stackoverflow.com/questions/75933212/can-i-pass-additional-classes-to-an-astro-component-from-parent) to pass classes to child components.
+
+
+
+---
+
 # **FP2 \- Evaluation of the Final project**
 
 ## Project Description
