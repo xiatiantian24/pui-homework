@@ -55,7 +55,7 @@ if (!images[imgPath])
            const button = this.querySelector('a');
            const target = this.querySelector('.img-wrap');
 
-           // Referenced ChatGPT to calculation the math of adjusted mouse position due to page scroll 
+           // Referenced ChatGPT to fix css transition effect
            function follow(e) {
                target.style.left = `${e.pageX + 24}px`;
                target.style.top = `${e.pageY - window.scrollY - 0.5*target.scrollHeight}px`;
