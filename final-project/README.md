@@ -2,7 +2,7 @@
 
 ## Part 1: Website Description
 
-> **Note: Please find my live site [here deployed on Netlify](https://rayx-pui-final-project.netlify.app/)**. It is not available on Github pages due to the installation of Astro framework. Please contact rayx@andrew.cmu.edu if you have trouble accessing the site.
+> **Note: Please find [my live site here](https://rayx-pui-final-project.netlify.app/) deployed on Netlify**. It is not available on Github pages due to the installation of Astro framework. Please contact rayx@andrew.cmu.edu if you have trouble accessing the site.
 
 ---
 
