@@ -80,7 +80,7 @@ const { coverSquare } = Astro.props;
       });
 
       // Follow effect for cover square
-      // Referenced ChatGPT to calculation the math of adjusted mouse positino due to logo ratation
+      // Referenced ChatGPT to achieve rotation effect and calculation the math of adjusted mouse position due to logo ratation 
       logo.addEventListener("mousemove", (event) => {
         const mouseEvent = event as MouseEvent;
         const rect = logo.getBoundingClientRect();
